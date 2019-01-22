@@ -1,0 +1,21 @@
+{
+  "name": "triple-jonron",
+  "version": "1.0.0",
+  "description": "Aplicacion web creada para Carlos Suarez, permite que sus clientes realizen apuestas en linea",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fabioepb/Triple-Jonron"
+  },
+  "author": "Fabio Pineda",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6"
+  }
+}
