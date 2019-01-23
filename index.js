@@ -9,7 +9,7 @@ app.use('/', express.static(__dirname + '/public'));
 app.get('/',(req,res)=>{
 	res.redirect('index.html');
 });
-//app.use('/', require('./controllers'))
+//app.use('/', require('./controllers')) TEST
 
 app.listen(8080, () =>{
     console.log("app listening to port 8080")
