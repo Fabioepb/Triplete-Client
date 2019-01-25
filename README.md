@@ -7,6 +7,7 @@ This is a web app developed for our Software Engineering II asignment, the app's
 * HTML5
 * CSS3
 * Bootstrap 4
+* Nodejs
 * ExpressJs
 
 ## Guia de instalacion / Installation guide
