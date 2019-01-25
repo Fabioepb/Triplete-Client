@@ -5,10 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Triple Jonron | Registro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        @media (max-width: 544px) {  
+            .display-1 {
+                font-size: 40px !important;
+                margin-left: 0;
+            }
+            h5{ 
+                font-size: 15px
+            }
+        }
+    </style>
 </head>
-<body>
-    
-</body>
-</html>
+<body class="bg-dark">
+        <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet"></nav-bar>
+        <div class="container mt-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-sm-8 col-md-6" style="background-color:#E1AF39; border-top-right-radius: 15px; border-top-left-radius: 15px">
+                    <h2 class="display-1 font-weight-bold pt-3 pb-3" style="text-shadow: 4px 4px 12px #505050; font-size: 50px">Registro.</h2>
+                    <h5 class="pb-3" style="text-shadow: 2px 1px 8px #424242;color: black">Para poder iniciar sesion, poder apostar<br>y verificar estadisticas, debes haber creado una cuenta</h5>
+                </div>
+            </div>
+            <div class="row justify-content-center text-center">
+                <div class="col-sm-8 col-md-6 pb-4" style="background-color:#E1AF39; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px">
+                    <div class="form mb-3">
+                        <input type="text" class="form-control mb-2" placeholder="Nombres" aria-label="Name" style="font-size: 24px;box-shadow: 3px 3px 5px rgba(102, 102, 102, 0.527)">
+                        <input type="text" class="form-control" placeholder="Apellidos" aria-label="Surname" style="font-size: 24px;box-shadow: 3px 3px 5px rgba(102, 102, 102, 0.527)">
+                        <div class="text-muted">Debe utilizar un nombre valido<br> ej: Fabio Pineda</div>                       
+                        <input type="text" class="form-control my-2" placeholder="Usuario" aria-label="Username" style="font-size: 24px;box-shadow: 3px 3px 5px rgba(102, 102, 102, 0.527)">
+                        <div class="text-muted">Debe usar un nombre de usuario unico y sin caracteres especiales<br>ej: Geometriaenel8vo</div>
+                        <input type="email" class="form-control my-2" placeholder="Correo Electronico" aria-label="Email" style="font-size: 24px;box-shadow: 3px 3px 5px rgba(102, 102, 102, 0.527)">
+                        <div class="text-muted">Debe usar un correo electronico unico y sin caracteres especiales<br>ej: Josedaby@uru.edu</div>                        
+                        <input type="password" class="form-control my-2" placeholder="Contraseña" aria-label="Password" style="font-size: 24px;box-shadow: 3px 3px 5px rgba(102, 102, 102, 0.527)">
+                        <input type="password" class="form-control my-2" placeholder="Repetir contraseña" aria-label="Password" style="font-size: 24px;box-shadow: 3px 3px 5px rgba(102, 102, 102, 0.527)">
+                        <button type="submit" class="btn btn-dark btn-block shadow mt-5" style="color: #E1AF39; font-size: 25px">Registrarme</button>
+                    </div>
+                    <div class="text-muted">Ya tienes una cuenta? haz click <a href="../login" style="color: black">aqui!</a></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="../node_modules/popper.js/dist/umd/popper.js"></script>
+        <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="../components/navbar.js"></script>
+    </body>
+    </html>
