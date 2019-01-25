@@ -5,10 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Triple Jonron | Iniciar Sesion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+            @media (max-width: 544px) {  
+                .display-1 {font-size: 30px !important;margin-left: 0;}
+                h5{ font-size: 15px}
+            }
+        </style>
 </head>
-<body>
-    
+<body class="bg-dark">
+    <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet"></nav-bar>
+    <div class="container mt-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-sm-8 col-md-6" style="background-color:#E1AF39; border-top-right-radius: 15px; border-top-left-radius: 15px">
+                <h2 class="display-1 font-weight-bold pt-3 pb-3" style="text-shadow: 4px 4px 12px #505050; font-size: 50px">Inicia sesion.</h2>
+                <h5 class="pb-5" style="text-shadow: 2px 1px 8px #424242;color: black">Para poder acceder a tu perfil, poder apostar<br>y verificar estadisticas, debes haber iniciado sesion</h5>
+            </div>
+        </div>
+        <div class="row justify-content-center text-center">
+            <div class="col-sm-8 col-md-6 pb-4" style="background-color:#E1AF39; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px"">
+                <div class="form mb-3">
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" style="font-size: 24px;box-shadow: 3px 3px 5px rgba(102, 102, 102, 0.527)">
+                    <input type="password" class="form-control my-5" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" style="font-size: 24px;box-shadow: 3px 3px 5px rgba(102, 102, 102, 0.527)">
+                    <button type="submit" class="btn btn-dark btn-block shadow" style="color: #E1AF39">Iniciar Sesion</button>
+                </div>
+                <div class="text-muted">Olvidaste tu contraseña? haz click <a href="#" style="color: black">aqui!</a></div>
+                <div class="text-muted">Eres nuevo aqui? haz click <a href="../register/" style="color: black">aqui!</a></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../node_modules/popper.js/dist/umd/popper.js"></script>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../components/navbar.js"></script>
 </body>
 </html>
