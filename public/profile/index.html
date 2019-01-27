@@ -5,10 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/profile.css">
 </head>
-<body>
-    <h1>me cago en emilio</h1>
+<body class="bg-dark">
+    <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet"></nav-bar>
+    <div class="container" style="margin-top:30px">
+            <div class="row">
+              <div class="col-sm-4 photo">
+                <h2>Invitado</h2>
+                <div class="col"><img src="https://c7.alamy.com/comp/PCR69F/man-betting-on-sports-over-shoulder-view-on-tablet-with-scores-PCR69F.jpg" 
+                    class="img-fluid rounded-circle shadow-lg p-1 bg-dark rounded m-0 mb-0" />
+                </div> <br>
+                <p>Jose Perez</p>
+                <h3>Maracaibo, Zulia</h3>
+                <p>Fanatico del Baseball, de los deportes y las apuestas</p>
+                <ul class="nav nav-pills flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Configuraciones</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Apuestas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Historial</a>
+                  </li>
+                </ul>
+                <hr class="d-sm-none">
+              </div>
+              <div class="col-sm-8 text-light games">
+                <h2>Juegos proximos</h2>
+                <h5>27/1/2019</h5>
+                <p>Leones del Caracas vs Navegantes del Magallanes</p>
+                <h5>31/1/2019</h5>
+                <p>Aguilas del Zulia vs Tigres de Arauga</p>
+                <h5>6/2/2019</h5>
+                <p>Caribes de Anzoátegui vs Tiburones de la Guaira</p>
+            </div>
+          </div>
+          <footer class="page-footer bg-dark" id="footer">
+                <div class="footer-copyright text-center text-light py-3">© 2019 Copyright:
+                    <a href="https://mdbootstrap.com/education/bootstrap/"> TripleJonron.com</a>
+                </div>
+            </footer>
+        <script type="text/javascript" src="../node_modules/popper.js/dist/umd/popper.js"></script>
+        <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="../components/navbar.js"></script>
 </body>
 </html>

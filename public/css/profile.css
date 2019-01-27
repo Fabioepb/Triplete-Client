@@ -1,0 +1,22 @@
+.photo{
+    background-color:#E1AF39;
+    border-top-left-radius: 15px;
+}
+
+a{
+    color: black;
+}
+
+h2{
+    text-shadow: 4px 4px 12px #505050; 
+    font-size: 50px;
+}
+
+h5{
+    text-shadow: 2px 1px 8px #424242;
+    color: black;
+}
+.games{
+    background-color:#262626;
+    border-top-right-radius: 15px;
+}
