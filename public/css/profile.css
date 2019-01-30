@@ -1,22 +1,24 @@
-.photo{
+.fondo{
     background-color:#E1AF39;
-    border-top-left-radius: 15px;
+    border-radius: 30px;
 }
 
 a{
     color: black;
 }
-
-h2{
-    text-shadow: 4px 4px 12px #505050; 
-    font-size: 50px;
+.score{
+    color: #E1AF39;
+    padding: 4% 0 0 5%;
 }
-
-h5{
-    text-shadow: 2px 1px 8px #424242;
-    color: black;
+#play{
+    padding-right: 10%;
+    border-right: #E1AF39 solid 1px;
 }
-.games{
-    background-color:#262626;
-    border-top-right-radius: 15px;
+#win{
+    padding-right: 10%;
+    padding-left: 10%;
+    border-right: #E1AF39 solid 1px;
+}
+#loss{
+    padding-left: 10%
 }
