@@ -1,0 +1,118 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TripleJonron | HomePage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css" integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/regular.css" integrity="sha384-IG162Tfx2WTn//TRUi9ahZHsz47lNKzYOp0b6Vv8qltVlPkub2yj9TVwzNck6GEF" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css" integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous">
+    <style>
+        @media (max-width: 544px) {  
+            .display-1 {font-size: 65px;}
+            .display-2 {font-size: 55px}
+            .box {
+                width: 65%;
+                height: 17%;
+            }
+            h3{
+                font-size: 20px
+            }
+            h4{
+                font-size: 18px
+            }
+            #bet{
+                padding-bottom: 2px !important
+            }
+
+            .tabs{
+                padding-top: 5px
+            }
+
+            #info{
+                padding-top: 10px
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav-bar inref="./login" upref="./register" pref="./profile" href="#" bref="./bet"></nav-bar>
+        <div class="container-fluid section landing text-center"> 
+            <div class="row text-center">
+                <h1 class="col display-1 font-weight-bold pb-5" id="bet">Apuesta</h1>
+            </div>
+            <div class="row">
+                <h3 class="col pb-3">
+                    Por tu equipo favorito,<br>contra el equipo vecino o <br>Solamente por que sí.
+                </h3>
+            </div>
+            <div class="row justify-content-center mt-5 mb-5">
+                <div class="col-sm-2 box">
+                    <h3>Existen</h3>
+                    <h3 id="numJugadores">50</h2>
+                    <h3>Jugadores</h3>
+                </div>
+                <div class="col-sm-2 box">
+                    <h3>Hay</h3>
+                    <h3 id="numEquipos">50</h2>
+                    <h3>Equipos</h3>
+                </div>
+                <div class="col-sm-2 box">
+                    <h4 style="color: white">Se han jugado</h3>
+                    <h3 id="numPartidos">50</h2>
+                    <h3>Partidos</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid section information text-light">
+            <div class="col-sm">
+                <h1 class="display-2 font-weight-bold text-center" id="info">Informate</h1>
+            </div>
+            <div class="col-sm text-center">
+                <h4>Con Triplete, ahora es mucho mas facil realizar apuestas desde la comodidad<br> de tu casa, computador o movil.<br>Con un acceso amplio a todo lo que necesitas saber de tu equipo o jugador favorito.</h3>
+            </div>
+            <div class="row tabs justify-content-center">
+                <div class="col-sm-3 text-center pt-1">
+                    <i class="far fa-user fa-3x"></i>
+                    <h4 class="subtitle">Crea un perfil unico</h4>
+                    <h6 style="opacity: 0.7">Diferenciate de los demas! y asegurate que nadie se haga pasar por tu persona con un usuario y contraseña unica.</h3>
+                </div>
+                <div class="col-sm-3 text-center pt-1">
+                    <i class="fas fa-bullseye fa-3x"></i>
+                    <h4 class="subtitle">Lleva un conteo de tus apuestas</h4>
+                    <h6 style="opacity: 0.7">Con estadisticas sobre todas tus apuestas, el balance de tu cuenta y hasta tu racha!</h6>
+                </div>
+                <div class="col-sm-3 text-center pt-1">
+                    <i class="fas fa-trophy fa-3x"></i>
+                    <h4 class="subtitle">Gana Torneos</h4>
+                    <h6 style="opacity: 0.7">Apuesta en los partidos, e intenta llevarte el premio si logras adivinar quien sera el ganador de un torneo</h6>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="col-sm text-center">
+                <img src="https://c7.alamy.com/comp/PCR69F/man-betting-on-sports-over-shoulder-view-on-tablet-with-scores-PCR69F.jpg" class="img-fluid rounded-circle shadow-lg p-1 bg-dark rounded m-5 mb-0" />
+            </div>
+            <div class="col-sm">
+                <h1 class="display-1 font-weight-bold">Verifica</h1>
+                <h3 class="d-flex justify-content-center pb-3">
+                    Cuantas veces ganaste,<br>Tu balance de cuenta<br>o si ya quebraste.
+                </h3>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer bg-dark" id="footer">
+        <div class="footer-copyright text-center text-light py-3">© 2019 Copyright:
+            <a href=""> TripleJonron.com</a>
+        </div>
+    </footer>
+    <script type="text/javascript" src="../node_modules/popper.js/dist/umd/popper.js"></script>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../components/navbar.js"></script>
+</body>
+</html>

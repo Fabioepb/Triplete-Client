@@ -1,8 +1,45 @@
-.row{
-    background-color:#E1AF39;
-    align-items: center;
+.section{
+    background-color:rgb(104, 159, 56);
+    justify-content: center;
+    align-content: center;
+    opacity: 0,5;
+    height: 100%
 }
 
+.tabs{
+    padding-top: 50px;
+}
+.landing{
+    height: 90% !important;
+    background: linear-gradient(to bottom, rgba(42, 42, 42, 0) 90%, rgb(42, 42, 42) 100%),url('../utils/soccer_sports_sport_poster_1920x1080.jpg');
+    background-size: cover;
+    justify-content: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+#info{
+    padding-top: 50px
+}
+
+.information{
+    background: linear-gradient(to bottom, rgba(42, 42, 42, 0) 90%, rgb(104, 159, 56) 100%), #262626   
+}
+
+.subtitle{
+    color: #689f38
+}
+
+.box{
+    border: 2px solid #689f38;
+    width: 100%;
+    background: #262626;
+    border-radius: 10px;
+    margin: 5px;
+    -webkit-box-shadow: 11px 13px 39px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 11px 13px 39px -5px rgba(0,0,0,0.75);
+    box-shadow: 11px 13px 15px -5px rgba(0,0,0,0.75);
+}
 img{
     max-width: 60% !important;
     height: 40% !important;
@@ -14,7 +51,7 @@ h3{
 }
 
 #bet{
-text-shadow: 4px 4px 8px #505050;
+text-shadow: 4px 4px 8px #5a5a5a;
 }
 
 .text-light{
@@ -22,9 +59,9 @@ text-shadow: 4px 4px 8px #505050;
     align-items: center;
 }
 
-#win{
-    text-shadow: 4px 4px 8px rgb(105, 105, 105); 
-    color: #E1AF39;
+#info{
+    text-shadow: 4px 4px 8px rgb(77, 77, 77); 
+    color: #7bbb42;
 }
 
 #verify{
