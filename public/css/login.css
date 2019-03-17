@@ -1,21 +1,36 @@
 .contain{
-    background-color:#E1AF39; 
+    background-color: #689f38; 
     border-top-right-radius: 15px; 
     border-top-left-radius: 15px;
+}
+
+body{
+    background: linear-gradient(to bottom, rgba(42, 42, 42, 0) 70%, rgb(42, 42, 42) 100%),url('../utils/view-soccer-football-field-pitch-footage-023616330_prevstill.jpeg');
+    background-size: cover;
 }
 
 h2{
     text-shadow: 4px 4px 12px #505050; 
     font-size: 50px;
 }
-
+h4{
+    font-size: 17px
+}
 h5{
     text-shadow: 2px 1px 8px #424242;
-    color: black;
+    color: white;
 }
 
+.helptext{
+    color: white;
+    text-shadow: 2px 2px 8px #000000;
+}
+
+.display-1{
+    font-size: 50px
+}
 .form{
-    background-color:#E1AF39; 
+    background-color:#689f38; 
     border-bottom-right-radius: 15px; 
     border-bottom-left-radius: 15px;
 }
@@ -26,7 +41,7 @@ input{
 }
 
 button{
-    color: #E1AF39; 
+    color: #689f38; 
     font-size: 25px;
 }
 a{

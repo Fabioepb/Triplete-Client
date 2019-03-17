@@ -1,5 +1,5 @@
 .contain{
-    background-color:#E1AF39; 
+    background-color:#689f38; 
     border-top-right-radius: 15px; 
     border-top-left-radius: 15px;
 }
@@ -9,13 +9,22 @@ h2{
     font-size: 50px;
 }
 
+.display-1{
+    font-size: 50px
+}
+
+body{
+    background: linear-gradient(to bottom, rgba(42, 42, 42, 0) 70%, rgb(42, 42, 42) 100%),url('../utils/SNS-13258363-Aberdeen-v-Dundee.jpg-e1495627880486.jpg');
+    background-size: cover;
+}
+
 h5{
     text-shadow: 2px 1px 8px #424242;
     color: black;
 }
 
 .form{
-    background-color:#E1AF39; 
+    background-color:#689f38; 
     border-bottom-right-radius: 15px; 
     border-bottom-left-radius: 15px;
 }
@@ -26,7 +35,7 @@ input{
 }
 
 button{
-    color: #E1AF39; 
+    color: #689f38; 
     font-size: 25px;
 }
 a{
