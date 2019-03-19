@@ -1,5 +1,5 @@
 function LogOut() {
-
+    /*
     let configs = {
         method: 'GET',
         headers: {
@@ -14,7 +14,9 @@ function LogOut() {
             console.log("Logged out")             
         }).catch(error => {        	
             console.log(error.message);
-        })
+        })*/
+        localStorage.removeItem('session')
+        window.location.reload()
 }
 
 class NavBar extends HTMLElement {

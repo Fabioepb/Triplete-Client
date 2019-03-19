@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Triple Jonron | Registro</title>
+    <title>Triplete | Registro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../../css/register.css">
@@ -15,75 +15,113 @@
             }
             h5{ 
                 font-size: 15px
-            }
+            }   
         }
     </style>
 </head>
 <body class="bg-dark">
-        <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet"></nav-bar>
-        <div class="container mt-5">
-            <div class="row justify-content-center text-center">
-                <div class="col-sm-4 col-md-6 contain">
-                    <h2 class="display-1 font-weight-bold pt-3 pb-3">Registro.</h2>
-                    <h5 class="pb-3" style="color:white">Para poder iniciar sesion, poder apostar
-                        <br>y verificar estadisticas, debes haber creado una cuenta</h5>
-                </div>
-            </div>
-            <div class="row justify-content-center text-center">
-                <div class="col-sm-4 col-md-6 pb-4 form">
-                    <div class="form mb-3">
-                        <input id="name" type="text" class="form-control mb-2" placeholder="Nombres" aria-label="Name" >
-                        <input type="text" class="form-control" placeholder="Apellidos" aria-label="Surname" id="lastname">
-                        <div>Debe utilizar un nombre valido<br> ej: Fabio Pineda</div>                       
-                        <input type="text" class="form-control my-2" placeholder="Usuario" aria-label="Username" id="username">
-                        <div>Debe usar un nombre de usuario unico y sin caracteres especiales<br>ej: Geometriaenel8vo</div>
-                        <input type="email" class="form-control my-2" placeholder="Correo Electronico" aria-label="Email" id="email">
-                        <div>Debe usar un correo electronico unico y sin caracteres especiales<br>ej: Josedaby@uru.edu</div>                        
-                        <input type="password" class="form-control my-2" placeholder="Contraseña" aria-label="Password" id="password">
-                        <input type="password" class="form-control my-2" placeholder="Repetir contraseña" aria-label="Password">
-                        <button type="submit" class="btn btn-dark btn-block shadow mt-5" onclick="signUp()">Registrarme</button>
-                    </div>
-                    <div >Ya tienes una cuenta? haz click <a href="../login">aqui!</a></div>
-                </div>
+    <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet"></nav-bar>
+    <div class="container mt-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-sm-4 col-md-6 contain">
+                <h2 class="display-1 font-weight-bold pt-3 pb-3">Registro.</h2>
+                <h5 class="pb-3" style="color:white">Para poder iniciar sesion, poder apostar
+                    <br>y verificar estadisticas, debes haber creado una cuenta</h5>
             </div>
         </div>
-        <script type="text/javascript" src="../../../node_modules/popper.js/dist/umd/popper.js"></script>
-        <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-        <script type="text/javascript" src="../../components/navbar.js"></script>
-        <script>
-            function $(id) {
-                return document.getElementById(id);
-            } 
+        <div class="row justify-content-center text-center">
+            <div class="col-sm-4 col-md-6 pb-4 form">
+                <div class="form mb-3">
+                    <input id="name" type="text" class="form-control mb-2" placeholder="Nombres" aria-label="Name" >
+                    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Surname" id="lastname">
+                    <div>Debe utilizar un nombre valido<br> ej: Fabio Pineda</div>                       
+                    <input type="text" class="form-control my-2" placeholder="Usuario" aria-label="Username" id="username">
+                    <div>Debe usar un nombre de usuario unico y sin caracteres especiales<br>ej: Geometriaenel8vo</div>
+                    <input type="email" class="form-control my-2" placeholder="Correo Electronico" aria-label="Email" id="email">
+                    <div>Debe usar un correo electronico unico y sin caracteres especiales<br>ej: Josedaby@uru.edu</div>                        
+                    <input type="password" class="form-control my-2" placeholder="Contraseña" aria-label="Password" id="password">
+                    <input type="password" class="form-control my-2" placeholder="Repetir contraseña" aria-label="Password" id="password2">
+                    <button type="submit" class="btn btn-dark btn-block shadow mt-5" onclick="signUp()">Registrarme</button>
+                </div>
+                <div >Ya tienes una cuenta? haz click <a href="../login">aqui!</a></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../../node_modules/popper.js/dist/umd/popper.js"></script>
+    <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../components/navbar.js"></script>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        } 
 
 
-            getData = () =>({
-                name: $('name').value +' '+ $('lastname').value,
-                username: $('username').value,
-                password: $('password').value,
-                email: $('email').value,
-            })
+        getData = () =>({
+            name: $('name').value +' '+ $('lastname').value,
+            username: $('username').value,
+            password: $('password').value,
+            email: $('email').value,
+        })
+
+        validateInput = (data) =>{
+            let nameFormat = /[\p{P}\p{S}0-9]/u
+            let format = /[\p{P}\p{S}]/u
+            let passwordFormat = /[\p{S}]/u
+
+            let name = data.name.trim()
+            let username = data.username.trim()
+            let password = data.password.trim()
+            let password2 = $('password2').value.trim()
+            let email = data.email.trim()
+
+            if(name != '' && !nameFormat.test(name)){
+                if(username != '' && !format.test(username)){
+                    if(email != ''){
+                        if(password != '' && !passwordFormat.test(password) && password === password2)
+                            return true
+                        else
+                            throw new Error('Input de password vacio, utiliza caracteres especiales, o las contraseñas no coinciden')
+                    }else{
+                        throw new Error('Input de email Vacio')
+                    }
+                }else{
+                    throw new Error('Input de username vacio, o contiene caracteres especiales (._-/)')
+                }
+            }else{
+                throw new Error('Input de nombres vacios, contiene caracteres especiales o numeros')
+            }
+        }
 
             signUp = () =>{
                 let data = getData();
-                fetch('http://localhost:3000/signup',{
-                method: 'POST',
-                headers: {
-				'Content-Type': 'application/json'
-                },
-                credentials: 'include',
-                body: JSON.stringify(data)
-            })
-            .then(res => res.json())
-            .then(response=>{
-                if(response.status === 201){
-                    alert('success')
-                }else{
-                    alert("Error " + response.status + ", try again.")
+
+                try {
+                    if(validateInput(data)){
+                        fetch('http://localhost:3000/signup',{
+                            method: 'POST',
+                            headers: {
+                            'Content-Type': 'application/json'
+                            },
+                            credentials: 'include',
+                            body: JSON.stringify(data)
+                        })
+                        .then(res => res.json())
+                        .then(response=>{
+                            if(response.status === 201){
+                                alert('success')
+                                window.location.href = '..'
+                            }else{
+                                alert("Error " + response.status + ", try again.")
+                            }
+                        }).catch(error=> {
+                            alert(error)
+                        })
+                    }
+                } catch (error) {
+                    alert(error)
                 }
-            }).catch(error=> {
-                alert(error)
-            })
+
 
             }
             
