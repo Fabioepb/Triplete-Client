@@ -28,8 +28,8 @@
         <div class="row justify-content-center text-center">
             <div class="col-sm-8 col-md-6 pb-4 form">
                 <div class="form mb-3">
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                    <input type="password" class="form-control my-3" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="username">
+                    <input type="password" class="form-control my-3" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" id="password">
                     <button type="submit" class="btn btn-dark btn-block shadow mt-5">Iniciar Sesion</button>
                 </div>
                 <h4 class="helptext">Olvidaste tu contraseña? haz click <a href="#">aqui!</a></h4>
@@ -41,5 +41,44 @@
     <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="../../components/navbar.js"></script>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        } 
+
+        getData = () =>({
+            name: $('name').value,
+            password: $('password').value,
+        })
+
+        logIn = () =>{
+            let data = getData();
+
+            fetch('http://localhost:3000/login',{
+                method: 'POST',
+                headers: {
+				    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(response=>{
+                if(response.status === 200){
+                    let userdata = {
+                        username: response.username,
+                        token: response.token
+                    }
+                    localStorage.setItem('session',userdata)
+                }else{
+                    alert('Error '+response.status+' '+ response.message)
+                }
+            }).catch(error=> {
+                alert(error)
+            })
+
+            }
+           
+    </script>
 </body>
 </html>

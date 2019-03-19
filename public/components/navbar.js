@@ -1,5 +1,5 @@
 function LogOut() {
-    //let path = document.location.pathname;
+
     let configs = {
         method: 'GET',
         headers: {
@@ -8,7 +8,7 @@ function LogOut() {
         credentials: 'same-origin'
     }
    
-    fetch('localhost:8080/logout', configs)
+    fetch('localhost:3000/logout', configs)
         .then(response => response.json())
         .then(data => {        
             console.log("Logged out")             
@@ -51,10 +51,6 @@ class NavBar extends HTMLElement {
     userState() {
         let userData = this.userData;
 
-        //let userData ={
-        //    username: "GeometriaEnEl8vo",
-        //}
-        
         if (userData) {
             this.isIn(userData.username);
         } else {
