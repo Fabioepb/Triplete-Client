@@ -1,24 +1,30 @@
 .fondo{
-    background-color:#E1AF39;
+    background-color:#689f38;
     border-radius: 30px;
+    -webkit-box-shadow: 11px 13px 39px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 11px 13px 39px -5px rgba(0,0,0,0.75);
+    box-shadow: 11px 13px 15px -5px rgba(0,0,0,0.75);
 }
 
 a{
     color: black;
 }
 .score{
-    color: #E1AF39;
+    color: #689f38;
     padding: 4% 0 0 5%;
 }
 #play{
     padding-right: 10%;
-    border-right: #E1AF39 solid 1px;
+    border-right: #689f38 solid 1px;
+    color: white
 }
 #win{
     padding-right: 10%;
     padding-left: 10%;
-    border-right: #E1AF39 solid 1px;
+    border-right: #689f38 solid 1px;
+    color: white
 }
 #loss{
-    padding-left: 10%
+    padding-left: 10%;
+    color: white;
 }

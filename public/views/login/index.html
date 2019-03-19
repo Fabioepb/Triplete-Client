@@ -32,7 +32,7 @@
                     <input type="password" class="form-control my-3" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" id="password">
                     <button type="submit" class="btn btn-dark btn-block shadow mt-5" onclick='logIn()'>Iniciar Sesion</button>
                 </div>
-                <h4 class="helptext">Olvidaste tu contraseña? haz click <a href="#">aqui!</a></h4>
+                <h4 class="helptext">Olvidaste tu contraseña? haz click <a href="#" onclick="alert('mala leche')">aqui!</a></h4>
                 <h4 class="helptext">Eres nuevo aqui? haz click <a href="../register/">aqui!</a></h4>
             </div>
         </div>
@@ -52,7 +52,7 @@
         })
 
         validateInput = (data) =>{
-            
+
             let username = data.username.trim()
             let password = data.password.trim()
 
