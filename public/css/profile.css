@@ -1,30 +1,79 @@
-.fondo{
-    background-color:#689f38;
-    border-radius: 30px;
-    -webkit-box-shadow: 11px 13px 39px -5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 11px 13px 39px -5px rgba(0,0,0,0.75);
-    box-shadow: 11px 13px 15px -5px rgba(0,0,0,0.75);
+.fondo {
+    background-color: #689f38;
+    border-radius: 15px;
+    overflow: auto;
+    width: 90%;
+    height: 85%;
+    -webkit-box-shadow: 11px 13px 39px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 11px 13px 39px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 11px 13px 15px -5px rgba(0, 0, 0, 0.75);
 }
 
-a{
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background: linear-gradient(to bottom, rgba(42, 42, 42, 0) 70%, rgb(42, 42, 42) 100%), url('../utils/view-soccer-football-field-pitch-footage-023616330_prevstill.jpeg');
+    background-size: cover;
+}
+
+.divisor {
+    border: #262626 solid 1px;
+    height: 95%;
+    width: 1px;
+}
+
+.profile-card {
+    background-color: #262626;
+    color: #689f38;
+    border-radius: 15px;
+    height: 90%;
+}
+
+.divisor-card {
+    border-bottom: #689f38 1px solid
+}
+
+a {
     color: black;
 }
-.score{
+
+.score-play {
     color: #689f38;
-    padding: 4% 0 0 5%;
+    padding-right: 5%;
+    padding-left: 5%;
 }
-#play{
-    padding-right: 10%;
+
+.score-loss {
+    padding-left: 5%;
+}
+
+#play {
+    padding-left: 2%;
+    padding-right: 8%;
     border-right: #689f38 solid 1px;
     color: white
 }
-#win{
+
+#win {
     padding-right: 10%;
     padding-left: 10%;
     border-right: #689f38 solid 1px;
     color: white
 }
-#loss{
+
+#loss {
     padding-left: 10%;
     color: white;
 }

@@ -1,45 +1,83 @@
 <!doctype <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Triple Jonron | Perfil</title>
+    <title>Triplete | Perfil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../../css/profile.css">
 </head>
-<body class="bg-dark">
-    <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet"></nav-bar>
-      <div class="container mt-3 fondo" style="background-color: #689f38; width: 85%">
-          <div class="col-sm-4 justify-content-center text-center mt-4 mb-4 ml-3" style="background-color: #262626; color: #689f38; border-radius: 30px"> 
-            <div style="border-bottom:#689f38 1px solid"><img src="https://c7.alamy.com/comp/PCR69F/man-betting-on-sports-over-shoulder-view-on-tablet-with-scores-PCR69F.jpg" 
-              alt="" class="img-fluid small rounded-circle mt-2" style="height: 100px; width: 100px"> <h3 style="color: white">Invitado</h3></div>
-              <h3>Apuestas</h3>
-              <p style="border-bottom: #689f38 1px solid"><span class="score">Jugadas</span><span class="score">Ganadas</span><span class="score">Perdidas</span> <br>
-                <span id="play">27</span><span id="win">20</span><span id="loss">7</span> 
-              </p>
+<style>
+    @media (max-width: 760px) { 
+    .divisor{
+        height: 1px;
+        width: 95%;
+        margin-left: 2%;
+    }
 
-            <div class="d-inline-block pr-3" > <p><span class="h3 d-block mb-1">Racha</span><span class="mr-5">Actual</span><span class="ml-1">Mas alta</span><br>
-            <span class="mr-2 pr-5" style="border-right: #689f38 1px solid; color:white" >0</span><span class="ml-3 pl-3" style="color:white">20</span></p>
-            </div><div class="d-inline-block ml-2"><p><span class="h3 d-block mb-3">Balance</span><span class="h3 pl-4 mr-4" style="border-left: #689f38 1px solid; color:white">300,00<span class="text-success">$</span></span></p></div>
-            <div class="mb-2 p-2 text-left" style="border-top: #689f38 1px solid; color: #689f38"><a class="d-block" href="#" style="color:white">Cambiar informacion</a> <a href="#" style="color:white">Contactar soporte tecnico</a></div>
-          </div>
+}
+</style>
+<body>  
+<nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet"></nav-bar>
 
+<div class="container mt-3 fondo">
+    <div class="row">
+        <div class=" col-lg-4 col-md-11 col-sm-11  text-center m-4 profile-card">
+            <div class=" p-4 divisor-card">
+                <h3 style="color: white;text-align: initial">Invitado <span class="h6" style="color: #919191" id="username">@invitado1997</span></h3>
+            </div>
+            <div class="divisor-card">
+                <h3>Apuestas</h3>
+                <p class="text-center"><span class="score-play">Jugadas</span>
+                    <span class="score-win">Ganadas</span><span class="score-loss">Perdidas</span> <br>
+                    <span id="play">27</span><span id="win">20</span><span id="loss">7</span>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h3 class=" ">Racha</h3>
+                </div>
+                <div class="col-6">
+                    <h3 class="">Balance</h3>
+                </div>
+                <div class="col-2">
+                    Actual <br>
+                    <span style="border-right:#689f38 1px solid;" class="ml-3 text-white pr-3">20</span>
+                </div>
+                <div class="col-4">
+                    Mas alta <br>
+                    <span class="text-white pr-4 pl-4">20</span>
+                </div>
+                <div class="col-6 ">
+                    <span class="h3 text-white pt-3 pb-3 pl-5 " style="border-left:#689f38 1px solid; ">300</span><span class="h3 text-success pr-5">$</span>
+                </div>
+            </div>
+            <div class="col-lg-12 pr-3 mt-2 ">
+                <div class="mb-2 p-2 text-left " style="border-top: #689f38 1px solid; "><a class="d-block " href="../edit/index.html " style="color:white ">Cambiar informacion</a> <a href="# " style="color:white ">Contactar soporte tecnico</a>
+                </div>
+            </div>
+        </div>
 
-        <div class="col-sm-8 mt-4 ml-3" style="background-color: #262626; border-radius: 30px;">
-          <h4 class="d-inline pl-3" style="color: #689f38">Historial de Apuestas</h4>
-          <ul class="nav flex-column">
-            <li class="nav-item m-2" style="background-color: #689f38;border-radius: 30px">
-              <a class="nav-link" href="#">aguilas</a></li>
-            <li class="nav-item m-2" style="background-color: #689f38;border-radius: 30px">
-              <a class="nav-link" href="#">aguilas</a></li>
+        <div class="mt-3 divisor ">
+        </div>
+
+        <div class="col-lg-7 col-md-11 col-sm-11 text-center ml-4 mt-4 mr-3 profile-card ">
+            <h4 class="d-inline pl-3 " style="color: #689f38 ">Historial de Apuestas</h4>
+            <ul class="nav flex-column ">
+                <li class="nav-item m-2 " style="background-color: #689f38;border-radius: 15px ">
+                    <a class="nav-link " href="# ">item</a></li>
+                <li class="nav-item m-2 " style="background-color: #689f38;border-radius: 15px ">
+                    <a class="nav-link " href="# ">item</a></li>
             </ul>
-          
-         </div>
-      </div>
-        <script type="text/javascript" src="../../../node_modules/popper.js/dist/umd/popper.js"></script>
-        <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-        <script type="text/javascript" src="../../components/navbar.js"></script>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../../node_modules/popper.js/dist/umd/popper.js"></script>
+<script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../components/navbar.js"></script>
 </body>
+
 </html>

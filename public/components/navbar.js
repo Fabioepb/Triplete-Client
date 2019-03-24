@@ -39,7 +39,7 @@ class NavBar extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <nav style="background-color:#262626;"
-        class="navbar navbar-expand-md navbar-dark justify-content-between">
+        class="navbar navbar-expand-md navbar-dark justify-content-between sticky-top">
             <a class="navbar-brand" style="font-size: 20px !important; margin-left: 5%;">Triplete</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cContent" aria-controls="cContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
