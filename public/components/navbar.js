@@ -22,7 +22,7 @@ function LogOut() {
 class NavBar extends HTMLElement {
     constructor() {
         super();
-        ['inref', 'upref', 'href', 'pref', 'bref'].forEach(type => {
+        ['inref', 'upref', 'href', 'pref', 'bref','iref'].forEach(type => {
             if (!this.hasAttribute(type)) {
                 this.setAttribute(type, '#');
             }
@@ -33,6 +33,7 @@ class NavBar extends HTMLElement {
             signup: this.getAttribute('upref'),
             profile: this.getAttribute('pref'),
             bet: this.getAttribute("bref"),
+            information: this.getAttribute("iref")
         }
     } 
     connectedCallback() {
@@ -70,6 +71,9 @@ class NavBar extends HTMLElement {
                 <li class="nav-item" style="border-right-style: solid; border-right-color: #689f38; border-right-width: 1px; border-right-height: 1px;">
                     <a class=" nav-link" href="${this.urls.bet}" style="color: #689f38; font-size: 20px">Apostar</a>
                 </li>
+                <li class="nav-item" style="border-right-style: solid; border-right-color: #689f38; border-right-width: 1px; border-right-height: 1px;">
+                <a class=" nav-link" href="${this.urls.information}" style="color: #689f38; font-size: 20px">Informacion</a>
+            </li>
                 <li class="nav-item" style="border-right-style: solid; border-right-color: #689f38; border-right-width: 1px; border-right-height: 1px;">
                     <a id="id1" class="nav-link" href="${this.urls.profile}" style="color: #689f38; font-size: 20px">Perfil</a>
                 </li>

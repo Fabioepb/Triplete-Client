@@ -1,0 +1,52 @@
+body{
+  background: linear-gradient(to bottom, rgba(42, 42, 42, 0) 70%, rgb(42, 42, 42) 100%),url('../utils/thumb-1920-482000.jpg');
+  background-size: cover;
+}
+.form-control:focus {
+  border-color: rgb(104, 159, 56);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(104, 159, 56);
+}
+
+.nav-link.active{
+  background-color: #689f38 !important;
+  color: black !important;
+}
+
+.panel{
+  background-color: #689f38;
+  color: white !important;
+  border-radius: 10px;
+  padding-bottom: 1px
+}
+
+h4 a{
+  color: white
+}
+
+h4 a:hover{
+  color: white
+}
+
+.list-group-item{
+  border-radius: 5px;
+  margin-bottom: 3px;
+  background-color: #689f38;
+  color:black;
+}
+
+.list-group-item-action:hover{
+  background-color: gray;
+  color:white
+}
+
+#accordionTeam{
+  margin-right: 2%
+}
+
+#searchRow{
+  border-bottom: 2px solid #689f38;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-bottom: 5px;
+}
+
