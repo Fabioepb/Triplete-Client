@@ -1,0 +1,30 @@
+body{
+  background: linear-gradient(to bottom, rgba(42, 42, 42, 0) 70%, rgb(42, 42, 42) 100%),url('../utils/trrofeo.png');
+  background-size: cover;
+}
+
+img{
+  height: 100px !important;
+  width: 100px
+}
+
+.title{
+  color: white;
+  text-shadow: 2px 2px 3px #000000;
+}
+
+.stats{
+  background-color: #689f38;
+  border-radius: 15px
+}
+
+.white{
+  color: white;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.main{
+  overflow: auto;
+  height: 65%;
+  border-radius: 15px !important;
+}

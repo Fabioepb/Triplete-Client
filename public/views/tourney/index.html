@@ -1,0 +1,88 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Triplete | Tourney information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/tourney.css">
+</head>
+<body class="bg-dark">
+    <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet"></nav-bar>
+    <div class="container-fluid">
+        <div class="row mt-2 justify-content-center">
+            <img src="../../utils/champion.png" class="img-thumbnail" id="imgTourney">
+        </div>
+        <div class="row justify-content-center title">
+            <h3>Champions League</h3>
+        </div>
+        <div class="container bg-dark main">
+            <div class="row justify-content-center">
+                <h4 style="color:white">Estadisticas del torneo</h4>
+            </div>
+            <div class="row mx-3">
+                <div class="container stats mb-2">
+                    <div class="row justify-content-between">
+                        <div class="col-sm-2 m-1 text-center white">
+                            Participan:
+                            <h5 id="numParticipando">500</h4>
+                            equipos
+                        </div>
+                        <div class="col-sm-2 m-1 text-center white">
+                            Se han jugado:
+                            <h5 id="numJugados">50</h5>
+                            partidos
+                        </div>
+                        <div class="col-sm-2 m-1 text-center white">
+                            Se han apostado:
+                            <h5 id="numApostados">50 veces</h5>
+                            en este torneo
+                        </div>
+                        <div class="col-sm-2 m-1 text-center white">
+                            El proximo partido se tendra el:
+                            <h5 id="fechaPartido">23/05</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ml-3 mt-2 white">
+                <h3>Posiciones del torneo</h2>
+            </div>
+            <div class="row">
+                <table class="table table-striped table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">J</th>
+                        <th scope="col">G</th>
+                        <th scope="col">E</th>
+                        <th scope="col">P</th>
+                        <th scope="col">Pts</th>
+                        <th scope="col">Last</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tablaPosiciones">
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>F.C Barcelona</td>
+                        <td>6</td>
+                        <td>6</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>12</td>
+                        <td>Vict.</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../../node_modules/popper.js/dist/umd/popper.js"></script>
+    <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../components/navbar.js"></script>
+</body>
+</html>
