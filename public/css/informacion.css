@@ -40,6 +40,14 @@ h4 a:hover {
     color: white
 }
 
+.match {
+    background: linear-gradient(to bottom, rgba(42, 42, 42, 0) 70%, rgb(42, 42, 42) 100%), url('../utils/background.jpg');
+    background-size: contain;
+    width: 98%;
+    height: 15%;
+    margin-left: 1%;
+}
+
 .divisor {
     border: white solid 3px;
     width: 4%;
