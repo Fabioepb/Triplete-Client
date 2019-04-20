@@ -1,5 +1,6 @@
 <!doctype <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,18 @@
     <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../../css/register.css">
     <style>
-        @media (max-width: 560px) {  
+        @media (max-width: 560px) {
             .display-1 {
                 font-size: 40px !important;
                 margin-left: 0;
             }
-            h5{ 
+            h5 {
                 font-size: 15px
-            }   
+            }
         }
     </style>
 </head>
+
 <body class="bg-dark">
     <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet"></nav-bar>
     <div class="container mt-5">
@@ -29,21 +31,23 @@
                     <br>y verificar estadisticas, debes haber creado una cuenta</h5>
             </div>
         </div>
-        <div class="row justify-content-center text-center">
+        <div class="row justify-content-center">
             <div class="col-sm-4 col-md-6 pb-4 form">
                 <div class="form mb-3">
-                    <input id="name" type="text" class="form-control mb-2" placeholder="Nombres" aria-label="Name" >
-                    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Surname" id="lastname">
-                    <div>Debe utilizar un nombre valido<br> ej: Fabio Pineda</div>                       
-                    <input type="text" class="form-control my-2" placeholder="Usuario" aria-label="Username" id="username">
-                    <div>Debe usar un nombre de usuario unico y sin caracteres especiales<br>ej: Geometriaenel8vo</div>
-                    <input type="email" class="form-control my-2" placeholder="Correo Electronico" aria-label="Email" id="email">
-                    <div>Debe usar un correo electronico unico y sin caracteres especiales<br>ej: Josedaby@uru.edu</div>                        
-                    <input type="password" class="form-control my-2" placeholder="Contraseña" aria-label="Password" id="password">
+                    <label class="text-left" for="name">Nombres</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Ej: Fabio Andres">
+                    <label class="text-left my-2" for="lastname">Apellidos</label>
+                    <input type="text" class="form-control" id="lastname" aria-describedby="lastnameHelp" placeholder="Ej: Pineda Ferrer">
+                    <label class="text-left my-2" for="username">Usuario</label>
+                    <input type="text" class="form-control" placeholder="Ej: Geometriaenel8vo" aria-label="Username" id="username">
+                    <label class="text-left my-2" for="email">Correo electronico</label>
+                    <input type="email" class="form-control" placeholder="Ej: Josedaby@uru.edu" aria-label="Email" id="email">
+                    <label class="text-left my-2" for="password">Contraseña</label>
+                    <input type="password" class="form-control" placeholder="Contraseña" aria-label="Password" id="password">
                     <input type="password" class="form-control my-2" placeholder="Repetir contraseña" aria-label="Password" id="password2">
                     <button type="submit" class="btn btn-dark btn-block shadow mt-5" onclick="signUp()">Registrarme</button>
                 </div>
-                <div >Ya tienes una cuenta? haz click <a href="../login">aqui!</a></div>
+                <div class="text-center">Ya tienes una cuenta? haz click <a href="../login">aqui!</a></div>
             </div>
         </div>
     </div>
@@ -54,17 +58,16 @@
     <script>
         function $(id) {
             return document.getElementById(id);
-        } 
+        }
 
-
-        getData = () =>({
-            name: $('name').value +' '+ $('lastname').value,
+        getData = () => ({
+            name: $('name').value + ' ' + $('lastname').value,
             username: $('username').value,
             password: $('password').value,
             email: $('email').value,
         })
 
-        validateInput = (data) =>{
+        validateInput = (data) => {
             let nameFormat = /[\p{P}\p{S}0-9]/u
             let format = /[\p{P}\p{S}]/u
             let passwordFormat = /[\p{S}]/u
@@ -75,56 +78,56 @@
             let password2 = $('password2').value.trim()
             let email = data.email.trim()
 
-            if(name != '' && !nameFormat.test(name)){
-                if(username != '' && !format.test(username)){
-                    if(email != ''){
-                        if(password != '' && !passwordFormat.test(password) && password === password2)
+            if (name != '' && !nameFormat.test(name)) {
+                if (username != '' && !format.test(username)) {
+                    if (email != '') {
+                        if (password != '' && !passwordFormat.test(password) && password === password2)
                             return true
                         else
                             throw new Error('Input de password vacio, utiliza caracteres especiales, o las contraseñas no coinciden')
-                    }else{
+                    } else {
                         throw new Error('Input de email Vacio')
                     }
-                }else{
+                } else {
                     throw new Error('Input de username vacio, o contiene caracteres especiales (._-/)')
                 }
-            }else{
+            } else {
                 throw new Error('Input de nombres vacios, contiene caracteres especiales o numeros')
             }
         }
 
-            signUp = () =>{
-                let data = getData();
+        signUp = () => {
+            let data = getData();
 
-                try {
-                    if(validateInput(data)){
-                        fetch('http://localhost:3000/signup',{
+            try {
+                if (validateInput(data)) {
+                    fetch('http://localhost:3000/signup', {
                             method: 'POST',
                             headers: {
-                            'Content-Type': 'application/json'
+                                'Content-Type': 'application/json'
                             },
                             credentials: 'include',
                             body: JSON.stringify(data)
                         })
                         .then(res => res.json())
-                        .then(response=>{
-                            if(response.status === 201){
+                        .then(response => {
+                            if (response.status === 201) {
                                 alert('success')
                                 window.location.href = '..'
-                            }else{
+                            } else {
                                 alert("Error " + response.status + ", try again.")
                             }
-                        }).catch(error=> {
+                        }).catch(error => {
                             alert(error)
                         })
-                    }
-                } catch (error) {
-                    alert(error)
                 }
-
-
+            } catch (error) {
+                alert(error)
             }
-            
-        </script>
-    </body>
-    </html>
+
+
+        }
+    </script>
+</body>
+
+</html>

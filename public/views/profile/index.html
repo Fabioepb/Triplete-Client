@@ -10,74 +10,129 @@
     <link rel="stylesheet" href="../../css/profile.css">
 </head>
 <style>
-    @media (max-width: 760px) { 
-    .divisor{
-        height: 1px;
-        width: 95%;
-        margin-left: 2%;
+    @media (max-width: 760px) {
+        .divisor {
+            height: 1px;
+            width: 95%;
+            margin-left: 2%;
+        }
     }
-
-}
 </style>
-<body>  
-<nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet"></nav-bar>
 
-<div class="container mt-3 fondo">
-    <div class="row">
-        <div class=" col-lg-4 col-md-11 col-sm-11  text-center m-4 profile-card">
-            <div class=" p-4 divisor-card">
-                <h3 style="color: white;text-align: initial">Invitado <span class="h6" style="color: #919191" id="username">@invitado1997</span></h3>
-            </div>
-            <div class="divisor-card">
-                <h3>Apuestas</h3>
-                <p class="text-center"><span class="score-play">Jugadas</span>
-                    <span class="score-win">Ganadas</span><span class="score-loss">Perdidas</span> <br>
-                    <span id="play">27</span><span id="win">20</span><span id="loss">7</span>
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <h3 class=" ">Racha</h3>
-                </div>
-                <div class="col-6">
-                    <h3 class="">Balance</h3>
-                </div>
-                <div class="col-2">
-                    Actual <br>
-                    <span style="border-right:#689f38 1px solid;" class="ml-3 text-white pr-3">20</span>
-                </div>
-                <div class="col-4">
-                    Mas alta <br>
-                    <span class="text-white pr-4 pl-4">20</span>
-                </div>
-                <div class="col-6 ">
-                    <span class="h3 text-white pt-3 pb-3 pl-5 " style="border-left:#689f38 1px solid; ">300</span><span class="h3 text-success pr-5">$</span>
-                </div>
-            </div>
-            <div class="col-lg-12 pr-3 mt-2 ">
-                <div class="mb-2 p-2 text-left " style="border-top: #689f38 1px solid; "><a class="d-block " href="../edit/index.html " style="color:white ">Cambiar informacion</a> <a href="# " style="color:white ">Contactar soporte tecnico</a>
-                </div>
-            </div>
-        </div>
+<body>
+    <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet"></nav-bar>
 
-        <div class="mt-3 divisor ">
-        </div>
+    <div class="container mt-3 fondo">
+        <div class="row">
+            <div class=" col-lg-4 col-md-11 col-sm-11  text-center m-4 profile-card">
+                <div class=" p-4 divisor-card">
+                    <h3 id="name" style="color: white;text-align: initial">Invitado <span class="h6" style="color: #919191" id="username">@invitado1997</span></h3>
+                </div>
+                <div class="divisor-card">
+                    <h3>Apuestas</h3>
+                    <p class="text-center"><span class="score-play">Jugadas</span>
+                        <span class="score-win">Ganadas</span><span class="score-loss">Perdidas</span> <br>
+                        <span id="play">27</span><span id="win">20</span><span id="loss">7</span>
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h3>Racha</h3>
+                    </div>
+                    <div class="col-6">
+                        <h3>Balance</h3>
+                    </div>
+                    <div class="col-2">
+                        Actual <br>
+                        <span id="current" style="border-right:#689f38 1px solid;" class="ml-3 text-white pr-3">20</span>
+                    </div>
+                    <div class="col-4">
+                        Mas alta <br>
+                        <span id="highest" class="text-white pr-4 pl-4">20</span>
+                    </div>
+                    <div class="col-6 ">
+                        <span id="balance" class="h3 text-white pt-3 pb-3 pl-5 " style="border-left:#689f38 1px solid; ">300</span><span class="h3 text-success pr-5">$</span>
+                    </div>
+                </div>
+                <div class="col-lg-12 pr-3 mt-2 ">
+                    <div class="mb-2 p-2 text-left " style="border-top: #689f38 1px solid; "><a class="d-block " href="../edit/index.html " style="color:white ">Cambiar informacion</a> <a href="# " style="color:white ">Contactar soporte tecnico</a>
+                    </div>
+                </div>
+            </div>
 
-        <div class="col-lg-7 col-md-11 col-sm-11 text-center ml-4 mt-4 mr-3 profile-card ">
-            <h4 class="d-inline pl-3 " style="color: #689f38 ">Historial de Apuestas</h4>
-            <ul class="nav flex-column ">
-                <li class="nav-item m-2 " style="background-color: #689f38;border-radius: 15px ">
-                    <a class="nav-link " href="# ">item</a></li>
-                <li class="nav-item m-2 " style="background-color: #689f38;border-radius: 15px ">
-                    <a class="nav-link " href="# ">item</a></li>
-            </ul>
+            <div class="mt-3 divisor ">
+            </div>
+
+            <div class="col-lg-7 col-md-11 col-sm-11 text-center ml-4 mt-4 mr-3 profile-card ">
+                <h4 class="d-inline pl-3 " style="color: #689f38 ">Historial de Apuestas</h4>
+                <ul id="bets" class="nav flex-column ">
+                    <!--                     <li class="nav-item m-2 " style="background-color: #689f38;border-radius: 15px ">
+                        <a class="nav-link " href="# ">item</a></li>
+                    <li class="nav-item m-2 " style="background-color: #689f38;border-radius: 15px ">
+                        <a class="nav-link " href="# ">item</a></li> -->
+                </ul>
+            </div>
         </div>
     </div>
-</div>
-<script type="text/javascript" src="../../../node_modules/popper.js/dist/umd/popper.js"></script>
-<script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.js"></script>
-<script type="text/javascript" src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-<script type="text/javascript" src="../../components/navbar.js"></script>
+    <script type="text/javascript" src="../../../node_modules/popper.js/dist/umd/popper.js"></script>
+    <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../components/navbar.js"></script>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+        let userData = JSON.parse(localStorage.getItem('session'));
+        window.onpageshow = () => {
+            let name = $('name');
+            let username = $('username');
+            let play = $('play');
+            let win = $('win');
+            let loss = $('loss');
+            let current = $('current');
+            let highest = $('highest');
+            let balance = $('balance');
+
+            name.innerHTML = userData.name;
+            username.innerHTML = userData.username;
+            //se deberia de cambiar por un fetch pero por los momentos vamos a suponer que todo eso esta en el localStorege
+            play.innerHTML = userData.play;
+            win.innerHTML = userData.win;
+            loss.innerHTML = userData.loss;
+            current.innerHTML = userData.current;
+            highest.innerHTML = userData.highest;
+            balance.innerHTML = userData.balance;
+
+            let data = {
+                username: username.innerHTML
+            }
+
+            params = {
+                method: "GET",
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                }),
+                body: JSON.stringify(data)
+            }
+
+            fetch("./../bets", params) //Dios sabra el endpoint
+                .then(resp => resp.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.status == 200) { //por los momentos solo se van a mostrar
+                        data.data.forEach(element => {
+                            $("bets").innerHTML += `
+                            <li class="nav-item m-2 " style="background-color: #689f38;border-radius: 15px ">
+                            <a class="nav-link " href="# ">${element.match}</a></li>
+                            `
+                        });
+                    } else {
+                        alert(data.message + ", status(" + data.status + ")");
+                    }
+                });
+        }
+        }
+    </script>
 </body>
 
 </html>
