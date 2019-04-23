@@ -22,7 +22,7 @@
 </head>
 
 <body>
-  <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet" iref="../informacion"></nav-bar>
+  <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet" iref="../information"></nav-bar>
   <div class="container bg-dark mt-5" style="border-radius: 10px">
       <nav class="mt-2">
           <div class="nav nav-tabs mt-2" id="nav-tab" role="tablist">
@@ -139,13 +139,16 @@
                         <br>
                         <br>
                         <div class="row">
-                          <div class="col text-right" id='nombrelocal'>
-                            <input type="text" class="form-control bet-input" placeholder="0" aria-label="Username" aria-describedby="basic-addon1">
+                          <div class="col text-right" >
+                            <div id='nombrelocal' class='d-inline'></div>                            
+                            <input type="number" class="form-control bet-input w-25" oninput="validity.valid||(value='');" min='0' placeholder="0" aria-label="Username" aria-describedby="basic-addon1">
                           </div>
                           <div class="divisor"></div>
-                          <div class="col text-left" id='nombrevisitante'>
-                            <input type="text" class="form-control bet-input" placeholder="2" aria-label="Username" aria-describedby="basic-addon1">
-                          </div>
+                          <div class="col text-left">
+                            <input type="number" min='0' class="form-control bet-input w-25" oninput="validity.valid||(value='');"  placeholder="2" aria-label="Username" aria-describedby="basic-addon1">
+                            <div id='nombrevisitante' class='d-inline'></div>                            
+                      
+                            </div>
                         </div>
                         <br>
                         <br>
@@ -171,8 +174,8 @@
                 </div>`
             $('body').append(x)      
             $('#nombres')[0].innerHTML = `<p style="padding-top: 7%;">${obj.teams.local.name} vs ${obj.teams.visitante.name}</p>`
-            $('#nombrelocal')[0].innerHTML = `${obj.teams.local.name}`
-            $('#nombrevisitante')[0].innerHTML = `${obj.teams.visitante.name}`
+            $('#nombrelocal')[0].innerHTML = obj.teams.local.name
+            $('#nombrevisitante')[0].innerHTML = obj.teams.visitante.name
             
         
           })

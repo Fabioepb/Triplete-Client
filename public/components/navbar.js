@@ -70,9 +70,6 @@ class NavBar extends HTMLElement {
                     <b class="navbar-text mr-5 ml-2 mt-1" style="color: white; font-size: 18px" >${name}</b>
                 </li>
                 <li class="nav-item" style="border-right-style: solid; border-right-color: #689f38; border-right-width: 1px; border-right-height: 1px;">
-                    <a class=" nav-link" href="${this.urls.bet}" style="color: #689f38; font-size: 20px">Apostar</a>
-                </li>
-                <li class="nav-item" style="border-right-style: solid; border-right-color: #689f38; border-right-width: 1px; border-right-height: 1px;">
                 <a class=" nav-link" href="${this.urls.information}" style="color: #689f38; font-size: 20px">Informacion</a>
             </li>
                 <li class="nav-item" style="border-right-style: solid; border-right-color: #689f38; border-right-width: 1px; border-right-height: 1px;">
