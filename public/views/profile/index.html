@@ -6,9 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Triplete | Perfil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../../css/profile.css">
 </head>
+<script>
+    window.addEventListener("DOMContentLoaded",()=>{
+        console.log("bagre");
+        if (!localStorage.getItem("session")){
+          location.href = '..'
+        }
+      }
+    ) 
+    </script>
 <style>
     @media (max-width: 760px) {
         .divisor {
@@ -131,7 +140,7 @@
                     }
                 });
         }
-        }
+        
     </script>
 </body>
 

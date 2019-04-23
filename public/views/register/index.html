@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Triplete | Registro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../../css/register.css">
     <style>
         @media (max-width: 560px) {
@@ -51,9 +51,9 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="../../../node_modules/popper.js/dist/umd/popper.js"></script>
-    <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/popper.js/dist/umd/popper.js"></script>
+    <script type="text/javascript" src="/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="../../components/navbar.js"></script>
     <script>
         function $(id) {
@@ -99,12 +99,13 @@
         signUp = () => {
             let data = getData();
 
-            try {
-                if (validateInput(data)) {
-                    fetch('http://localhost:3000/signup', {
+                try {
+                    if(validateInput(data)){
+                        fetch('./../../signup',{
                             method: 'POST',
                             headers: {
-                                'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
+                            
                             },
                             credentials: 'include',
                             body: JSON.stringify(data)

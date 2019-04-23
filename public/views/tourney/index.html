@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Triplete | Tourney information</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../../css/tourney.css">
 </head>
 <body class="bg-dark">
-    <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet"></nav-bar>
+    <nav-bar inref="../login" upref="../register" pref="../profile" href="../" iref='../information' bref="../bet"></nav-bar>
     <div class="container-fluid">
         <div class="row mt-2 justify-content-center">
             <img src="../../utils/champion.png" class="img-thumbnail" id="imgTourney">
@@ -64,25 +64,66 @@
                       </tr>
                     </thead>
                     <tbody id="tablaPosiciones">
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>F.C Barcelona</td>
-                        <td>6</td>
-                        <td>6</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>12</td>
-                        <td>Vict.</td>
-                      </tr>
-
                     </tbody>
                   </table>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="../../../node_modules/popper.js/dist/umd/popper.js"></script>
-    <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/popper.js/dist/umd/popper.js"></script>
+    <script type="text/javascript" src="/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="../../components/navbar.js"></script>
+    <script>
+
+    window.addEventListener("DOMContentLoaded",()=>{
+        console.log("bagre");
+        if (!localStorage.getItem("session")){
+          location.href = '..'
+        }
+      }
+    ) 
+        let idTourney = new URL(window.location.href).searchParams.get("id");
+
+        let insertTeam = (obj,index) =>{
+            $("#tablaPosiciones").append(
+                `<tr>`+
+                    `<th scope='row'>${index+1}</th>`+
+                    `<td>${obj.teams_name}</td>`+
+                    `<td>${obj.games}</td>`+
+                    `<td>${obj.win}</td>`+
+                    `<td>${obj.draw}</td>`+
+                    `<td>${obj.lost}</td>`+
+                    `<td>${obj.points}</td>`+
+                    `<td>${(obj.last)?('Vict'):('Perd')}</td>`+
+                `</tr>`
+            )
+        }
+
+        let setInfo = (obj) =>{
+            $('#numParticipando')[0].innerHTML = obj.teams - 1
+            $('#numJugados')[0].innerHTML = obj.matches_played
+            $('#fechaPartido')[0].innerHTML = obj.next_match
+        }
+
+
+        fetch("http://localhost:3500/Tournament/"+idTourney,{
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+        })
+        .then(res => res.json())
+        .then(res=>{
+            console.log(res)
+
+            if(res.status === 200){
+                setInfo(res.data.info)
+                res.data.ranking.forEach((team,index)=>{
+                    insertTeam(team,index)
+                })
+            }
+        })
+    </script>
 </body>
 </html>

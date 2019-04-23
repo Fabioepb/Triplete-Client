@@ -17,6 +17,7 @@ function LogOut() {
         })*/
         localStorage.removeItem('session')
         window.location.reload()
+        
 }
 
 class NavBar extends HTMLElement {
