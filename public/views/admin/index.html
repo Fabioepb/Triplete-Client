@@ -1,0 +1,278 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Triplete | Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/informacion.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav-bar inref="../login" upref="../register" pref="../profile" href="../" bref="../bet" iref="../informacion"></nav-bar>
+    <div class="container bg-dark mt-5" style="border-radius: 10px">
+        <nav class="mt-2">
+            <div class="nav nav-tabs mt-2" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active mt-2" id="nav-team-tab" data-toggle="tab" href="#nav-team" role="tab" aria-controls="nav-team" aria-selected="true" style="color:white">Equipos</a>
+                <a class="nav-item nav-link mt-2" id="nav-matches-tab" data-toggle="tab" href="#nav-matches" role="tab" aria-controls="nav-matches" aria-selected="false" style="color:white">Partidos</a>
+                <a class="nav-item nav-link mt-2" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false" style="color:white">Torneos</a>
+            </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-team" role="tabpanel" aria-labelledby="nav-team-tab">
+
+                <div class="row mb-2" id="searchRow">
+                    <div class="input-group col-sm-8 mt-2">
+                        <input type="text success" id="searchTeam" class="form-control" placeholder="Nombre de equipo" aria-label="Nombre de Equipo" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-success btn-add-panel" type="button" id="button-addon2">Search</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <button class="btn btn-outline-danger mt-2" id="clearTeams">Limpiar resultados</button>
+                        <button type="button" class="btn btn-outline-warning mt-2 text-center" data-toggle="modal" data-target=".bd-example-modal-md">Añadir equipo</button>
+
+                        <div class="modal fade bd-example-modal-md" tabindex="-2" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content" style="background-color:#212529;color:white;">
+                              <div class="modal-header">
+                                <h5 class="modal-title h4 text-center" id="add">Añadir Equipo</h5>
+                                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="row">
+                                        <div class="form mb-3" style="width: 80%;margin-left: 10%;">
+                            <label class="text-left" for="name">Nombre del Equipo</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Ej: Barcelona">
+                            <label class="text-left my-2" for="country">Pais</label>
+                            <input type="text" class="form-control" id="country" aria-describedby="countryHelp" placeholder="Ej: España">
+                            <label class="text-left my-2" for="descrip">Descripcion</label>
+                            <input type="text" class="form-control" placeholder="Ej: Geometriaenel8vo" aria-label="descrip" id="descrip">
+                            <label class="text-left my-2" for="tournent">Torneo en el que participa</label>
+                            <input type="tournent" class="form-control" placeholder="Ej: The Champions League" aria-label="tournent" id="tournent">
+                        </div>
+        
+                                </div>
+                                <br>
+                                <br>
+                                <div class="text-center">
+                                        <button class="btn btn-outline-success mt-2 text-center" id="save" >Añadir</button>
+        
+                                  </div>                        
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="panel-group col" id="accordionTeam"></div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="nav-matches" role="tabpanel" aria-labelledby="nav-matches-tab">
+                    <div class="row mb-2" id="searchRow">
+                            <div class="input-group col-sm-8 mt-2">
+                                            <div class="input-group mb-3">
+
+                                                    <select class="custom-select " id="torneos" aria-label="Example select with button addon">
+                                                      <option selected>torneos...</option>
+<!--                                                       <option value="1">One</option>
+                                                      <option value="2">Two</option>
+                                                      <option value="3">Three</option> -->
+                                                    </select>
+                                                    <div class="input-group-prepend">
+                                                            <button class="btn btn-outline-success btn-add-panel" type="button" id="button-addon2">Search</button>
+                                                        </div>
+                                                  </div>
+                                          
+                            </div>
+                            <div class="col-sm-4">
+                                <button class="btn btn-outline-danger mt-2" id="clearMatch">Limpiar resultados</button>
+                                <button class="btn btn-outline-warning mt-2" id="createMatch">Crear partido</button>
+                            </div>
+                        </div>
+                <div class="list-group mt-2 pb-2" id="matchesList">
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">torneitos</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../components/navbar.js"></script>
+    <script type="text/javascript" src="../../../node_modules/popper.js/dist/umd/popper.js"></script>
+    <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script>
+        var hash = 1;
+
+        let addTeam = (obj) => {
+            $("#accordionTeam").append(
+                '<div class="panel panel-default mb-1 ml-3 col" style="margin-right: 2%">' +
+                '<div class="panel-heading" role="tab" id="heading_' + ++hash + '">' +
+                '<h4 class="panel-title">' +
+                '<a role="button" data-toggle="collapse" data-parent="#accordionTeam" href="#collapse_' + hash + '" aria-expanded="true" aria-controls="collapse_' + hash + '">' +
+                obj.name +
+                '</a>' +
+                '</h4>' +
+                '</div>' +
+                '<div id="collapse_' + hash + '" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_' + hash + '">' +
+                '<div class="panel-body">' +
+                '<div class="row mb-2">' +
+                '<div class="col-sm-6 text-break bg-dark rounded" style="margin-left:10px">' +
+                "Descripcion: <br/> " + obj.status +
+                "</div>" +
+                '<div class="col-sm-3 bg-dark rounded" style="margin-left: 10px">' +
+                " Pais: <br/>" + obj.country +
+                "<br/>" +
+                "Participa en:</br>" +
+                "LA CHAMPION LIG MMGB" +
+                "</div>" +
+                '<div class="col-sm-2 bg-dark rounded" style="margin-left: 10px">' +
+                '<button class="btn btn-outline-danger mt-2" id="clearTeams" style="width:95%">Borrar</button>'+
+                ` <button type="button" class="btn btn-outline-warning mt-2 text-center" data-toggle="modal" data-target=".bd-example-modal-xl" style="width:95%">Modificar</button>
+
+                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content" style="background-color:#212529;color:white;">
+                      <div class="modal-header">
+                        <h5 class="modal-title h4 text-center" id="myExtraLargeModalLabel">Modificar</h5>
+                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="text-center match">
+                          <p style="padding-top: 7%;">${obj.name}</p>
+                            </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                                <div class="form mb-3" style="width: 80%;margin-left: 10%;">
+                    <label class="text-left" for="name">Nombre del Equipo</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Ej: Barcelona">
+                    <label class="text-left my-2" for="country">Pais</label>
+                    <input type="text" class="form-control" id="country" aria-describedby="countryHelp" placeholder="Ej: España">
+                    <label class="text-left my-2" for="descrip">Descripcion</label>
+                    <input type="text" class="form-control" placeholder="Ej: Geometriaenel8vo" aria-label="descrip" id="descrip">
+                    <label class="text-left my-2" for="tournent">Torneo en el que participa</label>
+                    <input type="tournent" class="form-control" placeholder="Ej: The Champions League" aria-label="tournent" id="tournent">
+                </div>
+
+                        </div>
+                        <br>
+                        <br>
+                        <div class="text-center">
+                                <button class="btn btn-outline-success mt-2 text-center" id="save" >Guardar</button>
+
+                          </div>                        
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>` + 
+                "</div>" +
+                "</div>" +
+                '</div>' +
+                '</div>' +
+                '</div>'
+            )
+        }
+
+        let addMatch = (obj) => {
+            $('#torneos').append(` <option value="1">Champions</option>`);
+            $("#matchesList").append(
+                `<button type="button" class="btn list-group-item list-group-item-action text-center" data-toggle="modal" data-target=".bd-example-modal-xl">${obj.team1} vs ${obj.team2} 
+                </br>Fecha:${obj.date}</button>
+
+                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content" style="background-color:#212529;color:white;">
+                      <div class="modal-header">
+                        <h5 class="modal-title h4 text-center" id="myExtraLargeModalLabel">Apuesta</h5>
+                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="text-center match">
+                          <p style="padding-top: 7%;">${obj.team1} vs ${obj.team2}</p>
+                            </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                          <div class="col text-right">
+                            ${obj.team1}
+                            <input type="text" class="form-control bet-input" placeholder="0" aria-label="descrip" aria-describedby="basic-addon1">
+                          </div>
+                          <div class="divisor"></div>
+                          <div class="col text-left">
+                            <input type="text" class="form-control bet-input" placeholder="2" aria-label="descrip" aria-describedby="basic-addon1">
+                            ${obj.team2}
+                          </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="text-center">
+                          <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Metodos de pago
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#">Action</a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                          </div>                        
+                        </div>
+                        <br>
+                        <br>
+                        <button class="btn btn-outline-success mt-2 text-center" id="bet" style="margin-left: 40%;">Apostar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+`
+            )
+        }
+
+        let removeSearch = (element) => {
+            $(element).empty()
+        }
+
+        match = {
+            team1: "Real Madrid",
+            team2: "Barcelona",
+            date: "22/03/19"
+        }
+
+        team = {
+            name: 'Barcelona F.C',
+            status: 'Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.',
+            country: 'españa'
+        }
+
+        $("#clearTeams").on("click", () => {
+            removeSearch("#accordionTeam")
+        })
+
+        $("#button-addon2").on("click", () => {
+            addTeam(team)
+            addMatch(match)
+        });
+        window.onload = () => {
+            addTeam(team)
+            addMatch(match)
+        }
+    </script>
+</body>
+
+</html>
